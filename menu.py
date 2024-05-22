@@ -171,20 +171,27 @@ def add_to_order (item, price, quantity):
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         # 5. Check the customer's input
-
+    
+        match keep_ordering.Upper():
+            # Customer chose Yes
+            case 'Y':
                 # Keep ordering
-
+                place_order = True
                 # Exit the keep ordering question loop
+                break
 
+            # Customer chose No
+            case 'N':
                 # Complete the order
-
-                # Since the customer decided to stop ordering, thank them for
-                # their order
-
+                place_order = False
+                # Since the customer decided to stop ordering, thank them for their order
+                print("Thank you for your order.")
                 # Exit the keep ordering question loop
-
-
-                # Tell the customer to try again
+                break
+    
+            case _:
+                
+                print("Please try again.")           
 
 
 # Print out the customer's order
@@ -198,6 +205,8 @@ print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
 
+for List in range(len(order_list)):
+
     # 7. Store the dictionary items as variables
 
 
@@ -205,7 +214,8 @@ print("--------------------------|--------|----------")
 
 
     # 9. Create space strings
-
+    space_string = "_" * 60
+    print(space_string)
 
     # 10. Print the item name, price, and quantity
 
