@@ -208,17 +208,26 @@ print("--------------------------|--------|----------")
 for List in range(len(order_list)):
 
     # 7. Store the dictionary items as variables
-
-
+ 
+    item_name = order_list[List]["item"]
+    item_price = order_list[List]["price"]
+    item_quantity = order_list[List]["quantity"]
     # 8. Calculate the number of spaces for formatted printing
 
+    item_spaces =  - len(item_name)
+    price_spaces = - len(item_price)
+    quantity_spaces = - len (item_quantity)
+
+
+#lenght of item name substracted by number of dashes
 
     # 9. Create space strings
-    space_string = "_" * 60
-    print(space_string)
+space_string = "_" * 60
+print(space_string)
 
     # 10. Print the item name, price, and quantity
 
+print(item_name + item_spaces + "|"+ item_price+ price_spaces+ "|" + item_quantity+ quantity_spaces + "|")
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
