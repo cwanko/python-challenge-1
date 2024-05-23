@@ -214,9 +214,9 @@ for List in range(len(order_list)):
     item_quantity = order_list[List]["quantity"]
     # 8. Calculate the number of spaces for formatted printing
 
-    item_spaces =  - len(item_name)
-    price_spaces = - len(item_price)
-    quantity_spaces = - len (item_quantity)
+    item_spaces = 30 - len(item_name)
+    price_spaces = 10 - len(item_price)
+    quantity_spaces = 10 - len (item_quantity)
 
 
 #lenght of item name substracted by number of dashes
@@ -232,3 +232,18 @@ print(item_name + item_spaces + "|"+ item_price+ price_spaces+ "|" + item_quanti
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
+
+#for item_price in item_quantity:
+  
+cost_of_order = sum(item_name for item_price in item_quantity)  
+    
+cost_of_order = item_price * item_quantity
+
+print (cost_of_order)
+
+
+ 
+
+
+
+   
