@@ -61,7 +61,7 @@ print("Welcome to the variety food truck.")
 # Customers may want to order multiple items, so let's create a continuous
 # loop
 place_order = True
-while place_order:
+if place_order:
     # Ask the customer from which menu category they want to order
 
     place_order = input("Make Your Selection: Snacks, Meals, Desserts, Drinks? ")
@@ -91,6 +91,9 @@ while place_order:
             menu_category_name = menu_items[int(menu_category)]
             # Print out the menu category name they selected
             print(f"You selected {menu_category_name}")
+            
+        else:
+         print(f"{menu_category} was not a menu option.")
 
             # Print out the menu options from the menu_category_name
             print(f"What {menu_category_name} item would you like to order?")
@@ -128,7 +131,9 @@ while place_order:
 
                 # Convert the menu selection to an integer
                 menu_selection = int(menu_selection)
-
+  # Tell the customer they didn't select a number
+else:
+    print("You didn't select a number.")
                 # 4. Check if the menu selection is in the menu items
                 if menu_selection in menu_items.keys():
 
@@ -163,8 +168,6 @@ def add_to_order (item, price, quantity):
             # Tell the customer they didn't select a menu option
     print(f"{menu_category} was not a menu option.")
     
-        # Tell the customer they didn't select a number
-    print("You didn't select a number.")
 
     while True:
         # Ask the customer if they would like to order anything else
